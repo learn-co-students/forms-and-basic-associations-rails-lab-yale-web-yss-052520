@@ -7,6 +7,10 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # ID3 tag music genres are surprisingly specific.
+Genre.delete_all
+Song.delete_all
+Artist.delete_all
+
 
 genres = Hash[[
   "Blues",
@@ -158,5 +162,34 @@ genres = Hash[[
   "JPop",
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
+
+artists = Hash[["Taylor Swift", "Ed Sheeran", "Miley Cyrus", "BTS", "One Direction", "Beyonce", "Jay-Z", "Harry Styles"].map { |artist| [artist, Artist.find_or_create_by(name: artist)] }]
+
+Song.create(title: "Party in the USA", artist_id: 1, genre_id: 1)
+Song.create(title: "22", artist_id: 1, genre_id: 1)
+Song.create(title: "Red", artist_id: 1, genre_id: 1)
+Song.create(title: "A Team", artist_id: 2, genre_id: 1)
+Song.create(title: "The Climb", artist_id: 3, genre_id: 2)
+Song.create(title: "Wrecking Ball", artist_id: 3, genre_id: 2)
+Song.create(title: "Night Changes" , artist_id: 5, genre_id: 3)
+Song.create(title: "Watermelon, Sugar, High", artist_id: 8, genre_id: 10)
+Song.create(title: "Sign of the Times", artist_id: 8, genre_id: 10)
+Song.create(title: "Halo", artist_id: 6, genre_id: 4)
+Song.create(title: "The Best I've Never Had", artist_id: 6, genre_id: 5)
+Song.create(title: "Empire State of Mind", artist_id: 7, genre_id: 6)
+Song.create(title: "One Thing", artist_id: 5, genre_id: 6)
+Song.create(title: "Story of My Life", artist_id: 5, genre_id: 8)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
